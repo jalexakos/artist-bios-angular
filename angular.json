@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "artists-bio"
+    }
+  },
+  "defaultProject": "artists-bio",
+  "cli": {
+    "analytics": false
+  }
 }

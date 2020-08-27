@@ -1,0 +1,44 @@
+<h2>Kendrick Lamar</h2>
+<img src="../../assets/images/kendrick.jfif" alt="Kendrick Lamar" class="artist-pics">
+<div class="my-container">
+    <div class="artist-form">
+        <form [formGroup] = "artistForm">
+            <!-- Artist Name -->
+        <div class="form-group">
+        <label for="artistName">Artist Name:</label>
+        <input type="text" formControlName = "artistName" [(ngModel)] = "artistNameDisplay">
+        <div *ngIf="artistName.invalid && (artistName.dirty || artistName.touched)" class="heads-up">You must enter the Artist's name!</div>
+        </div>
+
+        <!-- Artist Nicknames -->
+        <div class="form-group">
+        <label for="artistNicknames">Artist Nicknames:</label>
+        <input type="text" formControlName = "artistNicknames" [(ngModel)] = "artistNicknamesDisplay">
+        </div>
+
+        <!-- Artist Greatest Song -->
+        <div class="form-group artistNickName">
+        <label for="artistGreatestSong">Artist's Greatest Song:</label>
+        <input type="text" formControlName = "artistGreatestSong" [(ngModel)] = "artistGreatestSongDisplay" >
+        <div *ngIf="artistGreatestSong.invalid && (artistGreatestSong.dirty || artistGreatestSong.touched)" class="heads-up">You must enter the Artist's greatest song!</div>
+        </div>
+
+        <!-- Artist Bio -->
+        <div class="form-group shrinking">
+        <label for="artistBio">Artist's Bio:</label>
+        <textarea type="text" formControlName = "artistBio" [(ngModel)] = "artistBioDisplay" class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+        <div *ngIf="artistBio.invalid && (artistBio.dirty || artistBio.touched)" class="heads-up">You must enter the Artist's bio info!</div>
+        </div>
+
+        <button type= "button" (click) = "onSubmit()" class="btn btn-primary mb-2">Submit</button>
+        </form>
+    </div>
+    
+    <div class="artist-display">
+        <h5 id="artistNameDisplay">{{ artistNameDisplay }}</h5>
+        <h5 id="artistNicknameDisplay">{{ artistNicknamesDisplay }}</h5>
+        <h5 id="artistGreatestSong">{{ artistGreatestSongDisplay }}</h5>
+        <h5 id="artistBio">{{ artistBioDisplay }}</h5>
+    </div>
+
+</div>
